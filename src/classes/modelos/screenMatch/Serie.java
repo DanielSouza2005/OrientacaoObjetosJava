@@ -1,6 +1,8 @@
-package classes.modelos.modulos;
+package classes.modelos.screenMatch;
 
-public class Serie extends Filme {
+import classes.modelos.utils.Classificacao;
+
+public class Serie extends Titulo implements Classificacao {
     private int temporadas;
     private int episodiosPorTemporada;
     private boolean ativa;
@@ -44,14 +46,11 @@ public class Serie extends Filme {
                  double somaDasAvaliacoes,
                  int totalDeAvaliacoes,
                  int duracaoEmMinutos,
-                 String diretor,
-                 int duracao,
-                 float orcamento,
                  int temporadas,
                  int episodiosPorTemporada,
                  boolean ativa,
                  int minutosPorEpisodio) {
-        super(nome, anoDeLancamento, incluidoNoPlano, somaDasAvaliacoes, totalDeAvaliacoes, duracaoEmMinutos, diretor, duracao, orcamento);
+        super(nome, anoDeLancamento, incluidoNoPlano, somaDasAvaliacoes, totalDeAvaliacoes, duracaoEmMinutos);
         this.temporadas = temporadas;
         this.episodiosPorTemporada = episodiosPorTemporada;
         this.ativa = ativa;
@@ -61,5 +60,10 @@ public class Serie extends Filme {
     @Override
     public int getDuracaoEmMinutos() {
         return temporadas * episodiosPorTemporada * minutosPorEpisodio;
+    }
+
+    @Override
+    public int getClassificacao() {
+        return (int) calculaMedia() / 2;
     }
 }

@@ -1,4 +1,6 @@
-package classes.modelos.modulos;
+package classes.modelos.screenMatch;
+
+import classes.modelos.utils.Classificacao;
 
 public class Filme extends Titulo implements Classificacao {
 
