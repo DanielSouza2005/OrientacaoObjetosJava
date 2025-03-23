@@ -1,4 +1,4 @@
-package classes.modelos;
+package classes.modelos.modulos;
 
 public class Titulo {
     private String nome;
@@ -7,6 +7,20 @@ public class Titulo {
     private double somaDasAvaliacoes;
     private int totalDeAvaliacoes;
     private int duracaoEmMinutos;
+
+    public Titulo(String nome,
+                  int anoDeLancamento,
+                  boolean incluidoNoPlano,
+                  double somaDasAvaliacoes,
+                  int totalDeAvaliacoes,
+                  int duracaoEmMinutos) {
+        this.nome = nome;
+        this.anoDeLancamento = anoDeLancamento;
+        this.incluidoNoPlano = incluidoNoPlano;
+        this.somaDasAvaliacoes = somaDasAvaliacoes;
+        this.totalDeAvaliacoes = totalDeAvaliacoes;
+        this.duracaoEmMinutos = duracaoEmMinutos;
+    }
 
     public String getNome() {
         return nome;
@@ -56,17 +70,17 @@ public class Titulo {
         this.duracaoEmMinutos = duracaoEmMinutos;
     }
 
-    public void exibeFichaTecnica(){
+    public void exibeFichaTecnica() {
         System.out.println("Nome do filme: " + nome);
         System.out.println("Ano de lançamento: " + anoDeLancamento);
     }
 
-    public void avalia(double nota){
+    public void avalia(double nota) {
         somaDasAvaliacoes += nota;
         totalDeAvaliacoes++;
     }
 
-    public double calculaMedia(){
+    public double calculaMedia() {
         return somaDasAvaliacoes / totalDeAvaliacoes;
     }
 }

@@ -1,4 +1,4 @@
-package classes.modelos;
+package classes.modelos.modulos;
 
 public class Serie extends Filme {
     private int temporadas;
@@ -36,6 +36,26 @@ public class Serie extends Filme {
 
     public void setTemporadas(int temporadas) {
         this.temporadas = temporadas;
+    }
+
+    public Serie(String nome,
+                 int anoDeLancamento,
+                 boolean incluidoNoPlano,
+                 double somaDasAvaliacoes,
+                 int totalDeAvaliacoes,
+                 int duracaoEmMinutos,
+                 String diretor,
+                 int duracao,
+                 float orcamento,
+                 int temporadas,
+                 int episodiosPorTemporada,
+                 boolean ativa,
+                 int minutosPorEpisodio) {
+        super(nome, anoDeLancamento, incluidoNoPlano, somaDasAvaliacoes, totalDeAvaliacoes, duracaoEmMinutos, diretor, duracao, orcamento);
+        this.temporadas = temporadas;
+        this.episodiosPorTemporada = episodiosPorTemporada;
+        this.ativa = ativa;
+        this.minutosPorEpisodio = minutosPorEpisodio;
     }
 
     @Override
